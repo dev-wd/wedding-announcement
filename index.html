@@ -271,7 +271,10 @@
       'KJW04417-0.jpg', 'KJW04661-0.jpg', 'KJW04708-0.jpg', 'KJW04766-0.jpg', 'KJW04872-0.jpg',
       'KJW04907-0.jpg', 'KJW04918-0.jpg'
     ];
-    document.querySelector('.gallery-grid').innerHTML = gallerySources.map((source, index) =>
+    const previewGallerySources = [...gallerySources]
+      .sort(() => Math.random() - .5)
+      .slice(0, 16);
+    document.querySelector('.gallery-grid').innerHTML = previewGallerySources.map((source, index) =>
       `<button class="gallery-item" type="button" aria-label="갤러리 사진 ${index + 1} 크게 보기"><img src="assets/gallery/${source}" alt="김수용과 백서혜의 갤러리 사진 ${index + 1}" loading="lazy"></button>`
     ).join('');
     const modal = document.querySelector('.gallery-modal');
