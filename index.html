@@ -273,7 +273,7 @@
       .sort(() => Math.random() - .5)
       .slice(0, 16);
     document.querySelector('.gallery-grid').innerHTML = previewGallerySources.map((source, index) =>
-      `<button class="gallery-item" type="button" aria-label="갤러리 사진 ${index + 1} 크게 보기"><img src="assets/gallery/${source}" alt="김수용과 백서혜의 갤러리 사진 ${index + 1}" loading="lazy"></button>`
+      `<button class="gallery-item" type="button" data-gallery-index="${gallerySources.indexOf(source)}" aria-label="갤러리 사진 ${index + 1} 크게 보기"><img src="assets/gallery/${source}" alt="김수용과 백서혜의 갤러리 사진 ${index + 1}" loading="lazy"></button>`
     ).join('');
     const modal = document.querySelector('.gallery-modal');
     const modalImage = modal.querySelector('img');
@@ -281,16 +281,15 @@
     const galleryCount = modal.querySelector('.gallery-count');
     let activeGalleryIndex = 0;
     const showGalleryImage = (index) => {
-      activeGalleryIndex = (index + galleryItems.length) % galleryItems.length;
-      const image = galleryItems[activeGalleryIndex].querySelector('img');
-      modalImage.src = image.src;
-      modalImage.alt = image.alt;
-      galleryCount.textContent = `${activeGalleryIndex + 1} / ${galleryItems.length}`;
+      activeGalleryIndex = (index + gallerySources.length) % gallerySources.length;
+      modalImage.src = `assets/gallery/${gallerySources[activeGalleryIndex]}`;
+      modalImage.alt = `김수용과 백서혜의 갤러리 사진 ${activeGalleryIndex + 1}`;
+      galleryCount.textContent = `${activeGalleryIndex + 1} / ${gallerySources.length}`;
     };
     const closeGallery = () => { modal.classList.remove('is-open'); modalImage.src = ''; };
-    galleryItems.forEach((item, index) => {
+    galleryItems.forEach((item) => {
       item.addEventListener('click', () => {
-        showGalleryImage(index);
+        showGalleryImage(Number(item.dataset.galleryIndex));
         modal.classList.add('is-open');
       });
     });
