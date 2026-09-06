@@ -16,10 +16,10 @@
     body { margin:0; color:var(--text); background:var(--paper); font-family:"SUIT", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif; font-weight:400; letter-spacing:-.03em; }
     .invite { width:min(100%, 520px); min-height:100vh; margin:0 auto; background:var(--paper); overflow:hidden; }
     .hero { position:relative; height:min(190vw, 960px); min-height:760px; background:url("assets/gallery/KJW03662-0.jpg") center center / cover no-repeat; }
-    .hero-copy { position:absolute; z-index:1; top:20%; inset-inline:28px; color:#fffdf9; text-align:center; text-shadow:0 1px 12px rgba(0,0,0,.26); }
+    .hero-copy { position:absolute; z-index:1; top:20%; inset-inline:28px; color:var(--paper); text-align:center; }
     .kicker { margin:0 0 13px; font-size:12px; letter-spacing:.16em; }
     h1 { width:max-content; max-width:100%; margin:0 auto; overflow:hidden; font-family:"Nanum Pen Script", cursive; font-size:58px; line-height:1.15; font-weight:400; letter-spacing:.035em; white-space:nowrap; clip-path:inset(0 100% 0 0); animation:handwrite 1.7s cubic-bezier(.2,.75,.25,1) .2s forwards; }
-    .date { position:absolute; z-index:1; bottom:4%; left:50%; width:max-content; max-width:calc(100% - 56px); overflow:hidden; color:#fffdf9; font-family:"Caveat", "SUIT", sans-serif; font-size:19px; font-weight:500; letter-spacing:.09em; white-space:nowrap; text-align:center; text-shadow:0 1px 12px rgba(0,0,0,.26); transform:translateX(-50%); clip-path:inset(0 100% 0 0); animation:handwrite 1.45s cubic-bezier(.2,.75,.25,1) 1.55s forwards; }
+    .date { position:absolute; z-index:1; bottom:4%; left:50%; width:max-content; max-width:calc(100% - 56px); overflow:hidden; color:var(--paper); font-family:"Caveat", "SUIT", sans-serif; font-size:19px; font-weight:500; letter-spacing:.09em; white-space:nowrap; text-align:center; transform:translateX(-50%); clip-path:inset(0 100% 0 0); animation:handwrite 1.45s cubic-bezier(.2,.75,.25,1) 1.55s forwards; }
     @keyframes handwrite { from { clip-path:inset(0 100% 0 0); } to { clip-path:inset(0 0 0 0); } }
     @media (prefers-reduced-motion:reduce) { h1, .date { clip-path:none; animation:none; } }
     .intro { padding:84px 32px 78px; background:var(--paper); text-align:center; }
@@ -68,15 +68,15 @@
     .gallery-item:nth-child(3) img { object-position:31% 59%; }
     .gallery-item:nth-child(4) img { object-position:50% 76%; }
     .gallery-item:nth-child(5) img { object-position:50% 22%; }
-    .gallery-modal { position:fixed; z-index:10; inset:0; display:none; align-items:center; justify-content:center; padding:20px; background:rgba(20,18,15,.92); }
+    .gallery-modal { position:fixed; z-index:10; inset:0; display:none; align-items:center; justify-content:center; padding:20px; background:var(--ink); }
     .gallery-modal.is-open { display:flex; }
     .gallery-modal img { max-width:100%; max-height:88vh; object-fit:contain; }
-    .gallery-close { position:absolute; top:18px; right:20px; border:0; background:transparent; color:#fff; font:32px/1 Arial, sans-serif; cursor:pointer; }
-    .gallery-nav { position:absolute; top:50%; width:54px; height:82px; transform:translateY(-50%); border:0; background:rgba(255,255,255,.03); color:#fff; font:34px/1 Arial, sans-serif; cursor:pointer; }
-    .gallery-nav:hover { background:rgba(255,255,255,.12); }
+    .gallery-close { position:absolute; top:18px; right:20px; border:0; background:transparent; color:var(--paper); font:32px/1 Arial, sans-serif; cursor:pointer; }
+    .gallery-nav { position:absolute; top:50%; width:54px; height:82px; transform:translateY(-50%); border:0; background:transparent; color:var(--paper); font:34px/1 Arial, sans-serif; cursor:pointer; }
+    .gallery-nav:hover { background:var(--walnut); }
     .gallery-prev { left:0; }
     .gallery-next { right:0; }
-    .gallery-count { position:absolute; bottom:19px; color:rgba(255,255,255,.8); font:12px "SUIT", sans-serif; letter-spacing:.1em; }
+    .gallery-count { position:absolute; bottom:19px; color:var(--paper); font:12px "SUIT", sans-serif; letter-spacing:.1em; }
     .notice { padding:54px 34px 58px; text-align:center; }
     .notice h2 { margin:0 0 18px; color:var(--ink); font-size:15px; font-weight:400; letter-spacing:.12em; }
     .notice p { margin:0; color:var(--text); font-size:13px; line-height:2; word-break:keep-all; }
@@ -105,14 +105,14 @@
     .account-copy span { font:12px "SUIT", sans-serif; letter-spacing:.06em; }
     .copy-icon { flex:0 0 auto; display:grid; place-items:center; width:20px; height:20px; color:var(--sage); }
     .copy-icon svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-linecap:round; stroke-linejoin:round; stroke-width:1.7; }
-    .kakaopay-transfer { width:76px; min-height:48px; display:grid; place-items:center; border:0; border-radius:8px; background:#fce777; color:var(--ink); font:700 10px/1 "SUIT", sans-serif; letter-spacing:-.04em; text-decoration:none; }
+    .kakaopay-transfer { width:76px; min-height:48px; display:grid; place-items:center; border:0; border-radius:8px; background:var(--sage); color:var(--paper); font:700 10px/1 "SUIT", sans-serif; letter-spacing:-.04em; text-decoration:none; }
     .sharing { padding:44px 28px 100px; background:var(--paper-deep); }
     .share-button { width:100%; height:48px; display:flex; align-items:center; justify-content:space-between; padding:0 20px; border:0; border-radius:12px; font:400 14px "SUIT", sans-serif; cursor:pointer; transition:transform .15s ease, filter .15s ease; }
     .share-button + .share-button { margin-top:12px; }
     .share-button:hover { filter:brightness(.97); }
     .share-button:active { transform:scale(.99); }
-    .share-kakao { background:#fce777; color:#222; }
-    .share-copy { background:var(--sage); color:var(--paper); }
+    .share-kakao { background:var(--sage); color:var(--paper); }
+    .share-copy { border:1px solid var(--sage-light); background:var(--paper); color:var(--sage); }
     .share-icon { display:grid; place-items:center; width:24px; height:24px; }
     .share-icon svg { width:21px; height:21px; fill:none; stroke:currentColor; stroke-linecap:round; stroke-linejoin:round; stroke-width:1.7; }
     .closing-photo { position:relative; height:min(125vw, 620px); margin:0; overflow:hidden; background:var(--paper-deep); }
