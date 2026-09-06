@@ -58,7 +58,9 @@
     .gallery > p:last-of-type { margin:10px 0 27px; color:var(--muted); font-size:12px; }
     .gallery-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); align-items:start; gap:5px; }
     .gallery-grid.is-collapsed .gallery-item:nth-child(n+10) { display:none; }
+    .gallery-grid.is-collapsed.has-landscape-preview .gallery-item:nth-child(n+9) { display:none; }
     .gallery-item { display:block; width:100%; min-width:0; margin:0; padding:0; overflow:hidden; border:0; background:transparent; cursor:zoom-in; }
+    .gallery-item.is-landscape { grid-column:span 2; }
     .gallery-item img { width:100%; height:auto; display:block; object-fit:contain; }
     .gallery-more { display:block; min-width:138px; margin:22px auto 0; padding:11px 18px; border:1px solid var(--line); border-radius:22px; background:#fff; color:var(--ink); font:500 12px "SUIT", sans-serif; letter-spacing:.04em; cursor:pointer; }
     .gallery-modal { position:fixed; z-index:10; inset:0; display:none; align-items:center; justify-content:center; padding:20px; background:var(--ink); }
@@ -328,10 +330,12 @@
       'KJW04417-0.jpg', 'KJW04661-0.jpg', 'KJW04708-0.jpg', 'KJW04766-0.jpg', 'KJW04872-0.jpg',
       'KJW04907-0.jpg', 'KJW04918-0.jpg'
     ];
+    const landscapeSources = new Set(['KJW00852-0.jpg', 'KJW01251-0.jpg', 'KJW01407-0.jpg', 'KJW01680-0.jpg', 'KJW02476-0.jpg', 'KJW02843-0.jpg', 'KJW03390-0.jpg', 'KJW03683-0.jpg', 'KJW04216-0.jpg']);
     const galleryGrid = document.querySelector('.gallery-grid');
     galleryGrid.innerHTML = gallerySources.map((source, index) =>
-      `<button class="gallery-item" type="button" data-gallery-index="${index}" aria-label="갤러리 사진 ${index + 1} 크게 보기"><img src="assets/gallery/${source}" alt="김수용과 백서혜의 갤러리 사진 ${index + 1}" loading="lazy"></button>`
+      `<button class="gallery-item${landscapeSources.has(source) ? ' is-landscape' : ''}" type="button" data-gallery-index="${index}" aria-label="갤러리 사진 ${index + 1} 크게 보기"><img src="assets/gallery/${source}" alt="김수용과 백서혜의 갤러리 사진 ${index + 1}" loading="lazy"></button>`
     ).join('');
+    galleryGrid.classList.toggle('has-landscape-preview', gallerySources.slice(0, 9).some((source) => landscapeSources.has(source)));
     const galleryMore = document.querySelector('.gallery-more');
     galleryMore.addEventListener('click', () => {
       const isExpanded = galleryGrid.classList.toggle('is-expanded');
