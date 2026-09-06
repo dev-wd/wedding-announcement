@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#FAF7F2">
+  <meta name="theme-color" content="#e9edde">
   <title>김수용 · 백서혜의 결혼 안내</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,6 +119,64 @@
     .closing-photo::before { content:""; position:absolute; z-index:1; inset:0 0 auto; height:24%; background:linear-gradient(to bottom, var(--paper-deep) 0%, rgba(241,235,225,.8) 36%, rgba(241,235,225,0) 100%); pointer-events:none; }
     .closing-photo img { width:100%; height:100%; display:block; object-fit:cover; object-position:center center; }
     footer { padding:31px 20px 34px; background:var(--paper); text-align:center; color:var(--muted); font-size:11px; font-weight:500; letter-spacing:.14em; }
+
+    /* 기존 안내장 색감 복원 */
+    :root { --ink:#30382b; --paper:#fbfbfa; --line:#d8ddd3; --accent:#7c8a60; --paper-deep:#f1f2f0; --text:#30382b; --muted:#66735f; --sage:#7c8a60; --sage-light:#afc18b; --sand:#a0b575; --walnut:#5d6b55; }
+    html { background:#ededeb; }
+    body { color:var(--ink); background:var(--paper); }
+    .invite { background:var(--paper); box-shadow:0 0 36px rgba(42,54,35,.13); }
+    .hero-copy { color:#fffdf9; text-shadow:0 1px 12px rgba(0,0,0,.26); }
+    .date { color:#fffdf9; text-shadow:0 1px 12px rgba(0,0,0,.26); }
+    .intro { background:#fff; }
+    .couple-photo { background:#c9d5af; }
+    .about { background:#ebf1e0; }
+    .about-title { color:#111; }
+    .gallery h2 { color:inherit; }
+    .about-intro { color:#111; }
+    .profile-card { background:#fff; box-shadow:0 4px 11px rgba(53,62,43,.16); }
+    .profile-photo { box-shadow:0 3px 7px rgba(53,62,43,.16); }
+    .profile-name { color:#111; }
+    .profile-name strong { color:#a0b575; }
+    .profile-bio { color:#222; }
+    .announcement { background:#fff; }
+    .announcement .label { color:#111; }
+    .date-korean { color:#222; }
+    .date-english { color:#6f7569; }
+    .calendar { color:#333; }
+    .calendar-sunday { color:#e98585; }
+    .calendar-day.is-wedding { background:#a0b575; color:#fff; }
+    .family-note { color:#586453; }
+    .gallery { background:#f5f6f4; }
+    .gallery > p:last-of-type { color:#66735f; }
+    .gallery-grid { background:transparent; }
+    .gallery-item { background:#c9d5af; }
+    .gallery-modal { background:rgba(20,18,15,.92); }
+    .gallery-close { color:#fff; }
+    .gallery-nav { background:rgba(255,255,255,.03); color:#fff; }
+    .gallery-nav:hover { background:rgba(255,255,255,.12); }
+    .gallery-count { color:rgba(255,255,255,.8); }
+    .notice h2 { color:inherit; }
+    .notice p { color:#586453; }
+    .gift { background:#fff; }
+    .gift h2 { color:inherit; }
+    .gift > p { color:#666; }
+    .accordion-item { background:#fff; box-shadow:0 1px 3px rgba(53,62,43,.12); }
+    .accordion-item.is-open { background:#ebf1e0; box-shadow:0 5px 14px rgba(53,62,43,.13); }
+    .accordion-trigger { background:#fff; color:#444; }
+    .accordion-item.is-open .accordion-trigger { background:#fff; }
+    .accordion-arrow { color:#7b8477; }
+    .account-card { background:#fff; box-shadow:0 4px 11px rgba(53,62,43,.14); }
+    .account-name { color:#333; }
+    .account-copy { background:#f4f4f4; color:#444; }
+    .account-copy small { color:#999; }
+    .copy-icon { color:#5f675b; }
+    .kakaopay-transfer { background:#fce777; color:#222; }
+    .sharing { background:#f1f2f0; }
+    .share-kakao { background:#fce777; color:#222; }
+    .share-copy { border:0; background:#afc18b; color:#fff; }
+    .closing-photo { background:#f1f2f0; }
+    .closing-photo::before { background:linear-gradient(to bottom, #f1f2f0 0%, rgba(241,242,240,.8) 36%, rgba(241,242,240,0) 100%); }
+    footer { background:#fff; color:#5d6b55; }
     @media (max-width:380px) { .hero { min-height:700px; } h1 { font-size:48px; } .intro { padding-inline:23px; } }
   </style>
 </head>
