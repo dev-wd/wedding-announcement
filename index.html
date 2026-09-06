@@ -12,7 +12,7 @@
     @font-face { font-family:"SUIT"; font-style:normal; font-weight:100 900; font-display:swap; src:url("https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.woff2") format("woff2-variations"); }
     :root { --paper:#FAF7F2; --paper-deep:#F1EBE1; --ink:#262421; --text:#4A453E; --muted:#78706A; --sage:#4E5A4A; --sage-light:#8B9682; --line:#E3DCD0; --sand:#C9B9A3; --walnut:#6B5344; --accent:var(--sage); }
     * { box-sizing:border-box; }
-    html { background:var(--paper-deep); }
+    html { background:var(--paper); }
     body { margin:0; color:var(--text); background:var(--paper); font-family:"SUIT", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif; font-weight:400; letter-spacing:-.03em; }
     .invite { width:min(100%, 520px); min-height:100vh; margin:0 auto; background:var(--paper); overflow:hidden; }
     .hero { position:relative; height:min(190vw, 960px); min-height:760px; background:url("assets/gallery/KJW03662-0.jpg") center center / cover no-repeat; }
@@ -57,7 +57,7 @@
     .family-note { margin:48px 0 0; padding-top:34px; border-top:1px solid var(--line); color:var(--text); font-size:13px; font-weight:600; line-height:2; word-break:keep-all; }
     .gallery { padding:82px 21px 76px; background:var(--paper-deep); text-align:center; }
     .gallery > p:last-of-type { margin:10px 0 27px; color:var(--muted); font-size:12px; }
-    .gallery-grid { display:grid; grid-template-columns:1.16fr .84fr; grid-auto-rows:154px; gap:5px; }
+    .gallery-grid { display:grid; grid-template-columns:1.16fr .84fr; grid-auto-rows:154px; gap:5px; background:var(--sage-light); }
     .gallery-item { min-width:0; padding:0; overflow:hidden; border:0; background:var(--paper); cursor:zoom-in; }
     .gallery-item:first-child { grid-row:span 2; }
     .gallery-item:nth-child(4) { grid-column:span 2; }
