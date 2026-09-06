@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#e9edde">
+  <meta name="theme-color" content="#FAF7F2">
   <title>김수용 · 백서혜의 결혼 안내</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&amp;family=Cormorant+Garamond:wght@400;500&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
   <style>
     @font-face { font-family:"SUIT"; font-style:normal; font-weight:100 900; font-display:swap; src:url("https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.woff2") format("woff2-variations"); }
-    :root { --ink:#30382b; --paper:#fbfbfa; --line:#d8ddd3; --accent:#7c8a60; }
+    :root { --paper:#FAF7F2; --paper-deep:#F1EBE1; --ink:#262421; --text:#4A453E; --muted:#78706A; --sage:#4E5A4A; --sage-light:#8B9682; --line:#E3DCD0; --sand:#C9B9A3; --walnut:#6B5344; --accent:var(--sage); }
     * { box-sizing:border-box; }
-    html { background:#ededeb; }
-    body { margin:0; color:var(--ink); background:var(--paper); font-family:"SUIT", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif; font-weight:400; letter-spacing:-.03em; }
-    .invite { width:min(100%, 520px); min-height:100vh; margin:0 auto; background:var(--paper); overflow:hidden; box-shadow:0 0 36px rgba(42,54,35,.13); }
+    html { background:var(--paper-deep); }
+    body { margin:0; color:var(--text); background:var(--paper); font-family:"SUIT", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif; font-weight:400; letter-spacing:-.03em; }
+    .invite { width:min(100%, 520px); min-height:100vh; margin:0 auto; background:var(--paper); overflow:hidden; }
     .hero { position:relative; height:min(190vw, 960px); min-height:760px; background:url("assets/gallery/KJW03662-0.jpg") center center / cover no-repeat; }
     .hero-copy { position:absolute; z-index:1; top:20%; inset-inline:28px; color:#fffdf9; text-align:center; text-shadow:0 1px 12px rgba(0,0,0,.26); }
     .kicker { margin:0 0 13px; font-size:12px; letter-spacing:.16em; }
@@ -22,43 +22,43 @@
     .date { position:absolute; z-index:1; bottom:4%; left:50%; width:max-content; max-width:calc(100% - 56px); overflow:hidden; color:#fffdf9; font-family:"Caveat", "SUIT", sans-serif; font-size:19px; font-weight:500; letter-spacing:.09em; white-space:nowrap; text-align:center; text-shadow:0 1px 12px rgba(0,0,0,.26); transform:translateX(-50%); clip-path:inset(0 100% 0 0); animation:handwrite 1.45s cubic-bezier(.2,.75,.25,1) 1.55s forwards; }
     @keyframes handwrite { from { clip-path:inset(0 100% 0 0); } to { clip-path:inset(0 0 0 0); } }
     @media (prefers-reduced-motion:reduce) { h1, .date { clip-path:none; animation:none; } }
-    .intro { padding:84px 32px 78px; background:#fff; text-align:center; }
+    .intro { padding:84px 32px 78px; background:var(--paper); text-align:center; }
     .intro-ring { display:block; width:50px; max-width:58%; height:auto; margin:0 auto 25px; }
     .intro p { margin:0; font-size:16px; line-height:2.15; word-break:keep-all; }
     .intro p + p { margin-top:30px; }
     .names { margin-top:35px!important; font-size:18px!important; letter-spacing:.1em; }
     .names span { padding:0 12px; color:var(--accent); font-size:19px; font-weight:300; vertical-align:0; }
-    .couple-photo { height:min(138vw, 680px); margin:0; overflow:hidden; background:#c9d5af; }
+    .couple-photo { height:min(138vw, 680px); margin:0; overflow:hidden; background:var(--paper-deep); }
     .couple-photo img { width:100%; height:100%; display:block; object-fit:cover; object-position:center 47%; filter:saturate(.8) sepia(.08); }
-    .about { padding:80px 40px; background:#ebf1e0; text-align:center; }
+    .about { padding:80px 40px; background:var(--paper-deep); text-align:center; }
     .section-eyebrow { margin:0 0 13px; color:var(--accent); font-size:11px; font-weight:500; letter-spacing:.15em; }
-    .about-title { margin:0; color:#111; font-family:"Cormorant Garamond", serif; font-size:36px; font-weight:400; letter-spacing:.06em; }
-    .gallery h2 { margin:0; font-size:19px; font-weight:400; letter-spacing:.08em; }
-    .about-intro { margin:25px 0 28px; color:#111; font-size:14px; line-height:1.85; }
+    .about-title { margin:0; color:var(--ink); font-family:"Cormorant Garamond", serif; font-size:36px; font-weight:400; letter-spacing:.06em; }
+    .gallery h2 { margin:0; color:var(--ink); font-size:19px; font-weight:400; letter-spacing:.08em; }
+    .about-intro { margin:25px 0 28px; color:var(--text); font-size:14px; line-height:1.85; }
     .about-intro p { margin:0; }
     .profile-list { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; width:100%; margin:0 auto; }
-    .profile-card { padding:16px; border-radius:12px; background:#fff; box-shadow:0 4px 11px rgba(53,62,43,.16); }
-    .profile-photo { aspect-ratio:1; margin:0 0 14px; overflow:hidden; border-radius:9px; box-shadow:0 3px 7px rgba(53,62,43,.16); }
+    .profile-card { padding:16px; border:1px solid var(--line); border-radius:1px; background:var(--paper); }
+    .profile-photo { aspect-ratio:1; margin:0 0 14px; overflow:hidden; border-radius:0; }
     .profile-photo img { width:100%; height:100%; display:block; object-fit:cover; }
     .profile-card:first-child .profile-photo img { object-position:35% center; }
     .profile-card:last-child .profile-photo img { object-position:68% center; }
-    .profile-name { margin:0 0 12px; color:#111; font-size:13px; }
-    .profile-name strong { margin-right:5px; color:#a0b575; font-weight:600; }
-    .profile-bio { margin:0; color:#222; font-size:11px; line-height:1.7; white-space:pre-line; word-break:keep-all; }
-    .announcement { margin:0; padding:68px 32px 63px; background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); text-align:center; }
-    .announcement .label { margin:0 0 29px; color:#111; font-family:"Cormorant Garamond", serif; font-size:35px; font-style:normal; font-weight:400; letter-spacing:.08em; }
-    .date-korean { margin:0; color:#222; font-size:14px; line-height:1.6; }
-    .date-english { margin:6px 0 45px; color:#6f7569; font-size:12px; font-weight:400; letter-spacing:.02em; }
-    .calendar { display:grid; grid-template-columns:repeat(7, 1fr); align-items:center; row-gap:21px; color:#333; font-size:14px; font-weight:300; }
+    .profile-name { margin:0 0 12px; color:var(--ink); font-size:13px; }
+    .profile-name strong { margin-right:5px; color:var(--sage); font-weight:600; }
+    .profile-bio { margin:0; color:var(--text); font-size:11px; line-height:1.7; white-space:pre-line; word-break:keep-all; }
+    .announcement { margin:0; padding:68px 32px 63px; background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); text-align:center; }
+    .announcement .label { margin:0 0 29px; color:var(--ink); font-family:"Cormorant Garamond", serif; font-size:35px; font-style:normal; font-weight:400; letter-spacing:.08em; }
+    .date-korean { margin:0; color:var(--text); font-size:14px; line-height:1.6; }
+    .date-english { margin:6px 0 45px; color:var(--muted); font-size:12px; font-weight:400; letter-spacing:.02em; }
+    .calendar { display:grid; grid-template-columns:repeat(7, 1fr); align-items:center; row-gap:21px; color:var(--text); font-size:14px; font-weight:300; }
     .calendar-weekday { font-size:13px; font-weight:400; }
-    .calendar-sunday { color:#e98585; }
+    .calendar-sunday { color:var(--walnut); }
     .calendar-day { height:32px; display:flex; align-items:center; justify-content:center; }
-    .calendar-day.is-wedding { width:32px; margin:auto; border-radius:50%; background:#a0b575; color:#fff; }
-    .family-note { margin:48px 0 0; padding-top:34px; border-top:1px solid var(--line); color:#586453; font-size:13px; font-weight:600; line-height:2; word-break:keep-all; }
-    .gallery { padding:82px 21px 76px; background:#f5f6f4; text-align:center; }
-    .gallery > p:last-of-type { margin:10px 0 27px; color:#66735f; font-size:12px; }
+    .calendar-day.is-wedding { width:32px; margin:auto; border-radius:50%; background:var(--sand); color:var(--ink); }
+    .family-note { margin:48px 0 0; padding-top:34px; border-top:1px solid var(--line); color:var(--text); font-size:13px; font-weight:600; line-height:2; word-break:keep-all; }
+    .gallery { padding:82px 21px 76px; background:var(--paper-deep); text-align:center; }
+    .gallery > p:last-of-type { margin:10px 0 27px; color:var(--muted); font-size:12px; }
     .gallery-grid { display:grid; grid-template-columns:1.16fr .84fr; grid-auto-rows:154px; gap:5px; }
-    .gallery-item { min-width:0; padding:0; overflow:hidden; border:0; background:#c9d5af; cursor:zoom-in; }
+    .gallery-item { min-width:0; padding:0; overflow:hidden; border:0; background:var(--paper); cursor:zoom-in; }
     .gallery-item:first-child { grid-row:span 2; }
     .gallery-item:nth-child(4) { grid-column:span 2; }
     .gallery-item img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .45s ease; }
@@ -78,47 +78,47 @@
     .gallery-next { right:0; }
     .gallery-count { position:absolute; bottom:19px; color:rgba(255,255,255,.8); font:12px "SUIT", sans-serif; letter-spacing:.1em; }
     .notice { padding:54px 34px 58px; text-align:center; }
-    .notice h2 { margin:0 0 18px; font-size:15px; font-weight:400; letter-spacing:.12em; }
-    .notice p { margin:0; color:#586453; font-size:13px; line-height:2; word-break:keep-all; }
-    .gift { padding:78px 28px 76px; background:#fff; text-align:center; }
-    .gift h2 { margin:0 0 13px; font-size:18px; font-weight:400; letter-spacing:.08em; }
-    .gift > p { margin:0 0 30px; color:#666; font-size:12px; line-height:1.9; word-break:keep-all; }
+    .notice h2 { margin:0 0 18px; color:var(--ink); font-size:15px; font-weight:400; letter-spacing:.12em; }
+    .notice p { margin:0; color:var(--text); font-size:13px; line-height:2; word-break:keep-all; }
+    .gift { padding:78px 28px 76px; background:var(--paper); text-align:center; }
+    .gift h2 { margin:0 0 13px; color:var(--ink); font-size:18px; font-weight:400; letter-spacing:.08em; }
+    .gift > p { margin:0 0 30px; color:var(--muted); font-size:12px; line-height:1.9; word-break:keep-all; }
     .accordion { display:grid; gap:12px; text-align:left; }
-    .accordion-item { overflow:hidden; border-radius:8px; background:#fff; box-shadow:0 1px 3px rgba(53,62,43,.12); transition:background .25s, box-shadow .25s; }
-    .accordion-item.is-open { background:#ebf1e0; box-shadow:0 5px 14px rgba(53,62,43,.13); }
-    .accordion-trigger { width:100%; height:60px; display:flex; align-items:center; justify-content:space-between; padding:0 16px; border:0; border-radius:8px; background:#fff; color:#444; font:500 14px "SUIT", sans-serif; cursor:pointer; }
-    .accordion-arrow { width:20px; height:20px; display:grid; place-items:center; color:#7b8477; transition:transform .22s ease; }
+    .accordion-item { overflow:hidden; border:1px solid var(--line); border-radius:1px; background:var(--paper); transition:background .25s; }
+    .accordion-item.is-open { background:var(--paper-deep); }
+    .accordion-trigger { width:100%; height:60px; display:flex; align-items:center; justify-content:space-between; padding:0 16px; border:0; border-radius:0; background:var(--paper); color:var(--ink); font:500 14px "SUIT", sans-serif; cursor:pointer; }
+    .accordion-arrow { width:20px; height:20px; display:grid; place-items:center; color:var(--sage); transition:transform .22s ease; }
     .accordion-arrow svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-linecap:round; stroke-linejoin:round; stroke-width:1.7; }
-    .accordion-item.is-open .accordion-trigger { border-radius:8px 8px 0 0; }
+    .accordion-item.is-open .accordion-trigger { border-radius:0; background:var(--paper-deep); }
     .accordion-item.is-open .accordion-arrow { transform:rotate(180deg); }
     .accordion-panel { display:grid; grid-template-rows:0fr; transition:grid-template-rows .25s ease; }
     .accordion-item.is-open .accordion-panel { grid-template-rows:1fr; }
     .accordion-panel-inner { min-height:0; overflow:hidden; padding:0 12px; }
     .accordion-item.is-open .accordion-panel-inner { padding:14px 12px 14px; }
-    .account-card { padding:22px; border-radius:12px; background:#fff; box-shadow:0 4px 11px rgba(53,62,43,.14); }
-    .account-name { display:flex; justify-content:space-between; margin-bottom:22px; color:#333; font-size:13px; }
+    .account-card { padding:22px; border:1px solid var(--line); border-radius:1px; background:var(--paper); }
+    .account-name { display:flex; justify-content:space-between; margin-bottom:22px; color:var(--walnut); font-size:13px; }
     .account-name strong { font-weight:400; }
     .account-actions { display:flex; gap:8px; }
-    .account-copy { flex:1; min-width:0; min-height:48px; display:flex; align-items:center; justify-content:space-between; gap:14px; padding:9px 13px; border:0; border-radius:8px; background:#f4f4f4; color:#444; text-align:left; cursor:pointer; }
+    .account-copy { flex:1; min-width:0; min-height:48px; display:flex; align-items:center; justify-content:space-between; gap:14px; padding:9px 13px; border:1px solid var(--line); border-radius:1px; background:var(--paper-deep); color:var(--text); text-align:left; cursor:pointer; }
     .account-copy small, .account-copy span { display:block; }
-    .account-copy small { margin-bottom:2px; color:#999; font:11px "SUIT", sans-serif; }
+    .account-copy small { margin-bottom:2px; color:var(--muted); font:11px "SUIT", sans-serif; }
     .account-copy span { font:12px "SUIT", sans-serif; letter-spacing:.06em; }
-    .copy-icon { flex:0 0 auto; display:grid; place-items:center; width:20px; height:20px; color:#5f675b; }
+    .copy-icon { flex:0 0 auto; display:grid; place-items:center; width:20px; height:20px; color:var(--sage); }
     .copy-icon svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-linecap:round; stroke-linejoin:round; stroke-width:1.7; }
-    .kakaopay-transfer { width:76px; min-height:48px; display:grid; place-items:center; border-radius:8px; background:#fce777; color:#222; font:700 10px/1 "SUIT", sans-serif; letter-spacing:-.04em; text-decoration:none; }
-    .sharing { padding:44px 28px 100px; background:#f1f2f0; }
-    .share-button { width:100%; height:48px; display:flex; align-items:center; justify-content:space-between; padding:0 20px; border:0; border-radius:12px; font:400 14px "SUIT", sans-serif; cursor:pointer; transition:transform .15s ease, filter .15s ease; }
+    .kakaopay-transfer { width:76px; min-height:48px; display:grid; place-items:center; border:1px solid var(--line); border-radius:1px; background:#fce777; color:var(--ink); font:700 10px/1 "SUIT", sans-serif; letter-spacing:-.04em; text-decoration:none; }
+    .sharing { padding:44px 28px 100px; background:var(--paper-deep); }
+    .share-button { width:100%; height:48px; display:flex; align-items:center; justify-content:space-between; padding:0 20px; border:1px solid var(--line); border-radius:1px; font:400 14px "SUIT", sans-serif; cursor:pointer; transition:transform .15s ease, filter .15s ease; }
     .share-button + .share-button { margin-top:12px; }
     .share-button:hover { filter:brightness(.97); }
     .share-button:active { transform:scale(.99); }
     .share-kakao { background:#fce777; color:#222; }
-    .share-copy { background:#afc18b; color:#fff; }
+    .share-copy { background:var(--sage); color:var(--paper); }
     .share-icon { display:grid; place-items:center; width:24px; height:24px; }
     .share-icon svg { width:21px; height:21px; fill:none; stroke:currentColor; stroke-linecap:round; stroke-linejoin:round; stroke-width:1.7; }
-    .closing-photo { position:relative; height:min(125vw, 620px); margin:0; overflow:hidden; background:#f1f2f0; }
-    .closing-photo::before { content:""; position:absolute; z-index:1; inset:0 0 auto; height:24%; background:linear-gradient(to bottom, #f1f2f0 0%, rgba(241,242,240,.8) 36%, rgba(241,242,240,0) 100%); pointer-events:none; }
+    .closing-photo { position:relative; height:min(125vw, 620px); margin:0; overflow:hidden; background:var(--paper-deep); }
+    .closing-photo::before { content:""; position:absolute; z-index:1; inset:0 0 auto; height:24%; background:linear-gradient(to bottom, var(--paper-deep) 0%, rgba(241,235,225,.8) 36%, rgba(241,235,225,0) 100%); pointer-events:none; }
     .closing-photo img { width:100%; height:100%; display:block; object-fit:cover; object-position:center center; }
-    footer { padding:31px 20px 34px; background:#fff; text-align:center; color:#5d6b55; font-size:11px; font-weight:500; letter-spacing:.14em; }
+    footer { padding:31px 20px 34px; background:var(--paper); text-align:center; color:var(--muted); font-size:11px; font-weight:500; letter-spacing:.14em; }
     @media (max-width:380px) { .hero { min-height:700px; } h1 { font-size:48px; } .intro { padding-inline:23px; } }
   </style>
 </head>
