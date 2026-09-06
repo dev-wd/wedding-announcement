@@ -37,8 +37,8 @@
     .about-intro { margin:25px 0 28px; color:var(--text); font-size:14px; line-height:1.85; }
     .about-intro p { margin:0; }
     .profile-list { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; width:100%; margin:0 auto; }
-    .profile-card { padding:16px; border:1px solid var(--line); border-radius:1px; background:var(--paper); }
-    .profile-photo { aspect-ratio:1; margin:0 0 14px; overflow:hidden; border-radius:0; }
+    .profile-card { padding:16px; border:0; border-radius:12px; background:var(--paper); box-shadow:0 4px 11px rgba(107,83,68,.13); }
+    .profile-photo { aspect-ratio:1; margin:0 0 14px; overflow:hidden; border-radius:9px; box-shadow:0 3px 7px rgba(107,83,68,.12); }
     .profile-photo img { width:100%; height:100%; display:block; object-fit:cover; }
     .profile-card:first-child .profile-photo img { object-position:35% center; }
     .profile-card:last-child .profile-photo img { object-position:68% center; }
@@ -84,30 +84,30 @@
     .gift h2 { margin:0 0 13px; color:var(--ink); font-size:18px; font-weight:400; letter-spacing:.08em; }
     .gift > p { margin:0 0 30px; color:var(--muted); font-size:12px; line-height:1.9; word-break:keep-all; }
     .accordion { display:grid; gap:12px; text-align:left; }
-    .accordion-item { overflow:hidden; border:1px solid var(--line); border-radius:1px; background:var(--paper); transition:background .25s; }
-    .accordion-item.is-open { background:var(--paper-deep); }
-    .accordion-trigger { width:100%; height:60px; display:flex; align-items:center; justify-content:space-between; padding:0 16px; border:0; border-radius:0; background:var(--paper); color:var(--ink); font:500 14px "SUIT", sans-serif; cursor:pointer; }
+    .accordion-item { overflow:hidden; border:0; border-radius:8px; background:var(--paper); box-shadow:0 1px 3px rgba(107,83,68,.12); transition:background .25s, box-shadow .25s; }
+    .accordion-item.is-open { background:var(--paper-deep); box-shadow:0 5px 14px rgba(107,83,68,.13); }
+    .accordion-trigger { width:100%; height:60px; display:flex; align-items:center; justify-content:space-between; padding:0 16px; border:0; border-radius:8px; background:var(--paper); color:var(--ink); font:500 14px "SUIT", sans-serif; cursor:pointer; }
     .accordion-arrow { width:20px; height:20px; display:grid; place-items:center; color:var(--sage); transition:transform .22s ease; }
     .accordion-arrow svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-linecap:round; stroke-linejoin:round; stroke-width:1.7; }
-    .accordion-item.is-open .accordion-trigger { border-radius:0; background:var(--paper-deep); }
+    .accordion-item.is-open .accordion-trigger { border-radius:8px 8px 0 0; background:var(--paper-deep); }
     .accordion-item.is-open .accordion-arrow { transform:rotate(180deg); }
     .accordion-panel { display:grid; grid-template-rows:0fr; transition:grid-template-rows .25s ease; }
     .accordion-item.is-open .accordion-panel { grid-template-rows:1fr; }
     .accordion-panel-inner { min-height:0; overflow:hidden; padding:0 12px; }
     .accordion-item.is-open .accordion-panel-inner { padding:14px 12px 14px; }
-    .account-card { padding:22px; border:1px solid var(--line); border-radius:1px; background:var(--paper); }
+    .account-card { padding:22px; border:0; border-radius:12px; background:var(--paper); box-shadow:0 4px 11px rgba(107,83,68,.12); }
     .account-name { display:flex; justify-content:space-between; margin-bottom:22px; color:var(--walnut); font-size:13px; }
     .account-name strong { font-weight:400; }
     .account-actions { display:flex; gap:8px; }
-    .account-copy { flex:1; min-width:0; min-height:48px; display:flex; align-items:center; justify-content:space-between; gap:14px; padding:9px 13px; border:1px solid var(--line); border-radius:1px; background:var(--paper-deep); color:var(--text); text-align:left; cursor:pointer; }
+    .account-copy { flex:1; min-width:0; min-height:48px; display:flex; align-items:center; justify-content:space-between; gap:14px; padding:9px 13px; border:0; border-radius:8px; background:var(--paper-deep); color:var(--text); text-align:left; cursor:pointer; }
     .account-copy small, .account-copy span { display:block; }
     .account-copy small { margin-bottom:2px; color:var(--muted); font:11px "SUIT", sans-serif; }
     .account-copy span { font:12px "SUIT", sans-serif; letter-spacing:.06em; }
     .copy-icon { flex:0 0 auto; display:grid; place-items:center; width:20px; height:20px; color:var(--sage); }
     .copy-icon svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-linecap:round; stroke-linejoin:round; stroke-width:1.7; }
-    .kakaopay-transfer { width:76px; min-height:48px; display:grid; place-items:center; border:1px solid var(--line); border-radius:1px; background:#fce777; color:var(--ink); font:700 10px/1 "SUIT", sans-serif; letter-spacing:-.04em; text-decoration:none; }
+    .kakaopay-transfer { width:76px; min-height:48px; display:grid; place-items:center; border:0; border-radius:8px; background:#fce777; color:var(--ink); font:700 10px/1 "SUIT", sans-serif; letter-spacing:-.04em; text-decoration:none; }
     .sharing { padding:44px 28px 100px; background:var(--paper-deep); }
-    .share-button { width:100%; height:48px; display:flex; align-items:center; justify-content:space-between; padding:0 20px; border:1px solid var(--line); border-radius:1px; font:400 14px "SUIT", sans-serif; cursor:pointer; transition:transform .15s ease, filter .15s ease; }
+    .share-button { width:100%; height:48px; display:flex; align-items:center; justify-content:space-between; padding:0 20px; border:0; border-radius:12px; font:400 14px "SUIT", sans-serif; cursor:pointer; transition:transform .15s ease, filter .15s ease; }
     .share-button + .share-button { margin-top:12px; }
     .share-button:hover { filter:brightness(.97); }
     .share-button:active { transform:scale(.99); }
