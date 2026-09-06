@@ -7,7 +7,7 @@
   <title>김수용 · 백서혜의 결혼 안내</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&amp;family=Cormorant+Garamond:wght@400;500&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
   <style>
     @font-face { font-family:"SUIT"; font-style:normal; font-weight:100 900; font-display:swap; src:url("https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.woff2") format("woff2-variations"); }
     :root { --ink:#30382b; --paper:#fbfbfa; --line:#d8ddd3; --accent:#7c8a60; }
@@ -19,8 +19,10 @@
     .topline { position:absolute; z-index:1; top:26px; left:28px; right:28px; display:flex; justify-content:space-between; color:#fffdf9; font-size:11px; font-weight:400; letter-spacing:.14em; }
     .hero-copy { position:absolute; z-index:1; top:20%; inset-inline:28px; color:#fffdf9; text-align:center; text-shadow:0 1px 12px rgba(0,0,0,.26); }
     .kicker { margin:0 0 13px; font-size:12px; letter-spacing:.16em; }
-    h1 { margin:0; font-size:32px; line-height:1.15; font-weight:600; letter-spacing:.035em; }
-    .date { margin:18px 0 0; font-size:13px; font-weight:400; letter-spacing:.12em; }
+    h1 { width:max-content; max-width:100%; margin:0 auto; overflow:hidden; font-family:"Nanum Pen Script", cursive; font-size:45px; line-height:1.15; font-weight:400; letter-spacing:.035em; white-space:nowrap; clip-path:inset(0 100% 0 0); animation:handwrite 1.7s cubic-bezier(.2,.75,.25,1) .2s forwards; }
+    .date { width:max-content; max-width:100%; margin:18px auto 0; overflow:hidden; font-family:"Caveat", "SUIT", sans-serif; font-size:19px; font-weight:500; letter-spacing:.09em; white-space:nowrap; clip-path:inset(0 100% 0 0); animation:handwrite 1.45s cubic-bezier(.2,.75,.25,1) 1.55s forwards; }
+    @keyframes handwrite { from { clip-path:inset(0 100% 0 0); } to { clip-path:inset(0 0 0 0); } }
+    @media (prefers-reduced-motion:reduce) { h1, .date { clip-path:none; animation:none; } }
     .intro { padding:84px 32px 78px; background:#fff; text-align:center; }
     .flower { width:34px; height:34px; margin:0 auto 31px; position:relative; }
     .flower::before, .flower::after { content:""; position:absolute; inset:7px; border:1px solid var(--accent); border-radius:100% 0 100% 0; transform:rotate(45deg); }
