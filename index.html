@@ -176,14 +176,7 @@
       <p class="section-eyebrow">GALLERY</p>
       <h2 id="gallery-title">우리의 순간들</h2>
       <p>사진을 누르면 크게 볼 수 있습니다.</p>
-      <!-- 실제 사진을 추가할 때 img의 src를 사진 파일 경로로 교체해 주세요. -->
-      <div class="gallery-grid">
-        <button class="gallery-item" type="button" aria-label="갤러리 사진 1 크게 보기"><img src="assets/hero-placeholder.png" alt="김수용과 백서혜의 임시 갤러리 사진"></button>
-        <button class="gallery-item" type="button" aria-label="갤러리 사진 2 크게 보기"><img src="assets/hero-placeholder.png" alt="김수용과 백서혜의 임시 갤러리 사진"></button>
-        <button class="gallery-item" type="button" aria-label="갤러리 사진 3 크게 보기"><img src="assets/hero-placeholder.png" alt="김수용과 백서혜의 임시 갤러리 사진"></button>
-        <button class="gallery-item" type="button" aria-label="갤러리 사진 4 크게 보기"><img src="assets/hero-placeholder.png" alt="김수용과 백서혜의 임시 갤러리 사진"></button>
-        <button class="gallery-item" type="button" aria-label="갤러리 사진 5 크게 보기"><img src="assets/hero-placeholder.png" alt="김수용과 백서혜의 임시 갤러리 사진"></button>
-      </div>
+      <div class="gallery-grid" aria-live="polite"></div>
     </section>
     <section class="gift" aria-labelledby="gift-title">
       <h2 id="gift-title">마음 전하실 곳</h2>
@@ -268,6 +261,19 @@
       catch { button.innerHTML = '<span>주소를 직접 복사해 주세요</span>'; }
       restoreButton(button, original);
     });
+    const gallerySources = [
+      'KJW00089-0.jpg', 'KJW00451-0.jpg', 'KJW00740-0.jpg', 'KJW00779-0.jpg', 'KJW00852-0.jpg', 'KJW00969-0.jpg',
+      'KJW01168-0.jpg', 'KJW01251-0.jpg', 'KJW01335-0.jpg', 'KJW01407-0.jpg', 'KJW01480-0.jpg', 'KJW01519-0.jpg',
+      'KJW01610-0.jpg', 'KJW01680-0.jpg', 'KJW01745-0.jpg', 'KJW01789-0.jpg', 'KJW02036-0.jpg', 'KJW02268-0.jpg',
+      'KJW02476-0.jpg', 'KJW02843-0.jpg', 'KJW03058-0.jpg', 'KJW03170-0.jpg', 'KJW03390-0.jpg', 'KJW03542-0.jpg',
+      'KJW03603-0.jpg', 'KJW03662-0.jpg', 'KJW03674-0.jpg', 'KJW03683-0.jpg', 'KJW03700-0.jpg', 'KJW03734-0.jpg',
+      'KJW03977-0.jpg', 'KJW04013-0.jpg', 'KJW04134-0.jpg', 'KJW04205-0.jpg', 'KJW04216-0.jpg', 'KJW04294-0.jpg',
+      'KJW04417-0.jpg', 'KJW04505-0.jpg', 'KJW04661-0.jpg', 'KJW04708-0.jpg', 'KJW04766-0.jpg', 'KJW04872-0.jpg',
+      'KJW04907-0.jpg', 'KJW04918-0.jpg'
+    ];
+    document.querySelector('.gallery-grid').innerHTML = gallerySources.map((source, index) =>
+      `<button class="gallery-item" type="button" aria-label="갤러리 사진 ${index + 1} 크게 보기"><img src="assets/gallery/${source}" alt="김수용과 백서혜의 갤러리 사진 ${index + 1}" loading="lazy"></button>`
+    ).join('');
     const modal = document.querySelector('.gallery-modal');
     const modalImage = modal.querySelector('img');
     const galleryItems = [...document.querySelectorAll('.gallery-item')];
