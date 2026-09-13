@@ -19,6 +19,7 @@
   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" crossorigin="anonymous"></script>
   <style>
     @font-face { font-family:"SUIT"; font-style:normal; font-weight:100 900; font-display:swap; src:url("https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.woff2") format("woff2-variations"); }
+    @font-face { font-family:"Pretendard"; font-style:normal; font-weight:45 920; font-display:swap; src:url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/woff2/PretendardVariable.woff2") format("woff2-variations"); }
     :root { --ink:#1F211F; --ink_2:#72756F; --paper:#C5C4BE; --line:#E5E5E2; --accent:#8A968C; --paper-deep:#f1f2f0; --text:#30382b; --muted:#30382b; --sage:var(--accent); --sage-light:var(--line); --sand:var(--accent); --walnut:var(--ink); }
     * { box-sizing:border-box; -webkit-user-select:none; user-select:none; -webkit-touch-callout:none; }
     html { background:var(--paper); }
@@ -43,6 +44,7 @@
     .couple-photo img { width:100%; height:100%; display:block; object-fit:cover; object-position:center 47%; filter:saturate(.8) sepia(.08); }
     .about { padding:80px 40px; background:var(--paper-deep); text-align:center; }
     .section-label { margin:0; color:#8A968C!important; font-family:"Noto Serif CJK KR Regular", "Noto Serif KR", serif!important; font-size:18px!important; font-weight:400!important; line-height:1.4; letter-spacing:.08em; }
+    .section-subtitle { margin:0; color:#1F211F!important; font-family:"Pretendard", -apple-system, BlinkMacSystemFont, sans-serif!important; font-size:20px!important; font-weight:500!important; line-height:1.5; letter-spacing:-.03em; }
     .section-eyebrow.section-label { margin:0 0 13px; }
     .about-title.section-label { margin:0; }
     .gallery h2 { margin:0; color:var(--ink); font-size:19px; font-weight:400; letter-spacing:.08em; }
@@ -250,7 +252,7 @@
     </section>
     <section class="gallery" aria-labelledby="gallery-title">
       <h2 class="section-eyebrow section-label">GALLERY</h2>
-      <h2 id="gallery-title">웨딩 갤러리</h2>
+      <h3 class="section-subtitle" id="gallery-title">웨딩 갤러리</h3>
       <p class="p3">사진을 누르면 크게 볼 수 있습니다.</p>
       <div class="gallery-grid is-collapsed" aria-live="polite"></div>
       <button class="gallery-more" type="button" aria-expanded="false">사진 더보기</button>
