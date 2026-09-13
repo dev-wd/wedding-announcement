@@ -42,8 +42,9 @@
     .couple-photo { height:min(138vw, 680px); margin:0; overflow:hidden; background:var(--paper-deep); }
     .couple-photo img { width:100%; height:100%; display:block; object-fit:cover; object-position:center 47%; filter:saturate(.8) sepia(.08); }
     .about { padding:80px 40px; background:var(--paper-deep); text-align:center; }
-    .section-eyebrow { margin:0 0 13px; color:var(--accent); font-size:11px; font-weight:500; letter-spacing:.15em; }
-    .about-title { margin:0; color:var(--ink); font-family:"Cormorant Garamond", serif; font-size:36px; font-weight:400; letter-spacing:.06em; }
+    .section-label { margin:0; color:#8A968C!important; font-family:"Noto Serif CJK KR Regular", "Noto Serif KR", serif!important; font-size:18px!important; font-weight:400!important; line-height:1.4; letter-spacing:.08em; }
+    .section-eyebrow.section-label { margin:0 0 13px; }
+    .about-title.section-label { margin:0; }
     .gallery h2 { margin:0; color:var(--ink); font-size:19px; font-weight:400; letter-spacing:.08em; }
     .about-intro { margin:25px 0 28px; color:var(--text); font-size:14px; line-height:1.85; }
     .about-intro p { margin:0; }
@@ -57,7 +58,7 @@
     .profile-name strong { margin-right:5px; color:var(--sage); font-weight:600; }
     .profile-bio { margin:0; color:var(--text); font-size:11px; line-height:1.7; white-space:pre-line; word-break:keep-all; }
     .announcement { margin:0; padding:68px 32px 63px; background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); text-align:center; }
-    .announcement .label { margin:0 0 29px; color:var(--ink); font-family:"Cormorant Garamond", serif; font-size:35px; font-style:normal; font-weight:400; letter-spacing:.08em; }
+    .announcement .section-label { margin:0 0 29px; }
     .date-korean { margin:0; color:var(--text); font-size:14px; line-height:1.6; }
     .date-english { margin:6px 0 45px; color:var(--muted); font-size:12px; font-weight:400; letter-spacing:.02em; }
     .calendar { display:grid; grid-template-columns:repeat(7, 1fr); align-items:center; row-gap:21px; color:var(--text); font-size:14px; font-weight:300; }
@@ -216,7 +217,7 @@
       <img src="assets/gallery/KJW04505-0.jpg" alt="김수용과 백서혜의 커플 사진">
     </figure>
     <section class="about" aria-labelledby="about-title">
-      <h2 class="about-title" id="about-title">ABOUT US</h2>
+      <h2 class="about-title section-label" id="about-title">ABOUT US</h2>
       <div class="about-intro p3"><p>저희 커플을 소개합니다</p><p>하나로 이어진 두 개의 우주</p></div>
       <!-- 각 프로필 사진과 소개 문구는 실제 정보로 교체해 주세요. -->
       <div class="profile-list">
@@ -235,7 +236,7 @@
       </div>
     </section>
     <section class="announcement">
-      <p class="label">WEDDING DAY</p>
+      <h2 class="section-label">WEDDING DAY</h2>
       <p class="date-korean">2026년 11월 7일 토요일</p>
       <p class="date-english">Saturday, November 7, 2026</p>
       <div class="calendar" role="grid" aria-label="2026년 11월 달력">
@@ -248,7 +249,7 @@
       </div>
     </section>
     <section class="gallery" aria-labelledby="gallery-title">
-      <p class="section-eyebrow">GALLERY</p>
+      <h2 class="section-eyebrow section-label">GALLERY</h2>
       <h2 id="gallery-title">웨딩 갤러리</h2>
       <p class="p3">사진을 누르면 크게 볼 수 있습니다.</p>
       <div class="gallery-grid is-collapsed" aria-live="polite"></div>
