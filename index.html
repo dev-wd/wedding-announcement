@@ -191,6 +191,8 @@
     .sharing { background:#f1f2f0; }
     .share-kakao { background:#fce777; color:#222; }
     .share-copy { border:0; background:#afc18b; color:#fff; }
+    .copy-toast { position:fixed; z-index:30; bottom:calc(28px + env(safe-area-inset-bottom)); left:50%; padding:11px 16px; border-radius:20px; background:var(--ink); color:#fff; font:500 14px/1 "SUIT", sans-serif; letter-spacing:-.02em; opacity:0; pointer-events:none; transform:translate(-50%, 10px); transition:opacity .18s ease, transform .18s ease; }
+    .copy-toast.is-visible { opacity:1; transform:translate(-50%, 0); }
     .closing-photo { background:#f1f2f0; }
     .closing-photo::before { background:linear-gradient(to bottom, #f1f2f0 0%, rgba(241,242,240,.8) 36%, rgba(241,242,240,0) 100%); }
     footer { background:#fff; color:#5d6b55; }
@@ -293,6 +295,7 @@
     <figure class="closing-photo"><img src="assets/gallery/KJW04417-0.jpg" alt="김수용과 백서혜의 웨딩 사진"></figure>
     <footer><strong>SOOYONG &amp; SEOHYE</strong><span>© 2026 김수용 · 백서혜. All rights reserved.</span></footer>
   </main>
+  <div class="copy-toast" role="status" aria-live="polite"></div>
   <div class="gallery-modal" role="dialog" aria-modal="true" aria-label="갤러리 사진 크게 보기">
     <button class="gallery-close" type="button" aria-label="갤러리 닫기">×</button>
     <button class="gallery-nav gallery-prev" type="button" aria-label="이전 사진">‹</button>
@@ -305,16 +308,22 @@
     ['copy', 'cut', 'paste', 'contextmenu', 'dragstart', 'selectstart'].forEach((eventName) => {
       document.addEventListener(eventName, (event) => event.preventDefault());
     });
+    const copyToast = document.querySelector('.copy-toast');
+    let copyToastTimer;
+    const showCopyToast = (message) => {
+      copyToast.textContent = message;
+      copyToast.classList.add('is-visible');
+      clearTimeout(copyToastTimer);
+      copyToastTimer = setTimeout(() => copyToast.classList.remove('is-visible'), 1800);
+    };
     document.querySelectorAll('[data-copy]').forEach((button) => {
       button.addEventListener('click', async () => {
-        const original = button.innerHTML;
         try {
           await navigator.clipboard.writeText(button.dataset.copy);
-          button.innerHTML = '<span>계좌번호가 복사되었습니다</span>';
+          showCopyToast('계좌번호가 복사되었습니다');
         } catch {
-          button.innerHTML = '<span>직접 복사해 주세요</span>';
+          showCopyToast('복사에 실패했습니다');
         }
-        setTimeout(() => { button.innerHTML = original; }, 1800);
       });
     });
     document.querySelectorAll('.accordion-trigger').forEach((trigger) => {
@@ -362,11 +371,8 @@
       }
     });
     document.querySelector('[data-copy-url]').addEventListener('click', async (event) => {
-      const button = event.currentTarget;
-      const original = button.innerHTML;
-      try { await navigator.clipboard.writeText(shareUrl); button.innerHTML = '<span>주소가 복사되었습니다</span>'; }
-      catch { button.innerHTML = '<span>주소를 직접 복사해 주세요</span>'; }
-      restoreButton(button, original);
+      try { await navigator.clipboard.writeText(shareUrl); showCopyToast('주소가 복사되었습니다'); }
+      catch { showCopyToast('복사에 실패했습니다'); }
     });
     const gallerySources = [
       'KJW00089-0.jpg', 'KJW00451-0.jpg', 'KJW00740-0.jpg', 'KJW00779-0.jpg', 'KJW00852-0.jpg', 'KJW00969-0.jpg',
